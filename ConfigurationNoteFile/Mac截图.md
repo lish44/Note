@@ -1,7 +1,6 @@
 # Mac 截图
 --------
 
-
 ### 换名字
 ```
 defaults write com.apple.screencapture name "the Default Name";

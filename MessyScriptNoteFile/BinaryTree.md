@@ -76,3 +76,93 @@ public void InorderRecursive (TreeNode root) {
 ```
 
 + 总的来说就是用一个栈来模拟，创建一个cur指针，一直往左边的节点迭代下去，每次迭代都入栈，当走到最后一个（也就是最左边那个节点）就停止（整个迭代在while里面进行），然后操作栈顶的元素（第一次的话就是最左下节点），取出来看它还有没右子节点，有的话cur指过去，然后while的时候又入栈 也就是说在子while中每都次以cur为路线找左节点 如此循环，再利用了栈的特性 直到右节点为空并且栈也为空时撒过
+
+### 二叉树构建
+#### 通过前序中序构建
+
+前序遍历在数组中的第一位就是根节点root 但是无法确定左右子树
+
+![Rehma-BuildTree-1.jpg](../pic/Rehma-BuildTree-1.jpg)
+
+--------
+
+通过中序遍历的结果关系可已确定左右子树
+
+![Rehma-BuildTree-2.jpg](../pic/Rehma-BuildTree-2.jpg) 
+--------
+
+进而在前序遍历中确定 左右子树
+
+![Rehma-BuildTree-3.jpg](../pic/Rehma-BuildTree-3.jpg) 
+--------
+
+通过递归以相同的方法继续构建左右子树 此时左子树只有一个不用管了 右边有三个大于一个 递归继续
+
+![Rehma-BuildTree-4.jpg](../pic/Rehma-BuildTree-4.jpg) 
+--------
+
+确定子树位置
+
+![Rehma-BuildTree-5.jpg](../pic/Rehma-BuildTree-5.jpg) 
+--------
+
+完成构建
+
+![Rehma-BuildTree-6.jpg](../pic/Rehma-BuildTree-6.jpg) 
+--------
+
+#### 计算边界和递归范围
+
+首先确定pre数组左右边界 __[rpeL,preR]__ （闭区间）in数组同理
+
+![Rehma-BuildTree-7.jpg](../pic/Rehma-BuildTree-7.jpg) 
+
++ `preL + 1` 就是在前序遍历中的 <font color=#ffbc32>left左子树</font> __起点__
++ `pIdx - inL + preL` 就是在前序遍历中的 <font color=#ffbc32>left左子树</font> __终点__ 
++ `pIdx` 就是中序遍历中<font color=#0aa858>root</font> 的下标
++ 其他位置如图同理计算
+
+#### 实现步骤
+
+1. 首先记录两个数组的长度
+```Csharp
+int preLen = preorder.Length;
+int inLen = inorder.Length;
+```
+
+2. 特判一下
+```Csharp
+if (preLen != inLen) return new TreeNode();
+```
+
+3. 用字典存一下中序遍历的下标与与值
+```Csharp
+Dictionary<int, int> dic = new Dictionary<int, int> ();
+for (int i = 0; i < inLen; ++i) {
+    dic.Add (inorder[i], i);
+}
+```
+
+4. 编写递归函数参数条件
+```Csharp
+return RecBuildTree (preorder, 0, preLen - 1, dic, 0, inLen - 1);
+```
+
+5. 递归实现
+```Csharp
+private TreeNode RecBuildTree (int[] preorder, int preL, int preR, Dictionary<int, int> inorderdic, int inL, int inR) {
+    if (preL > preR || inL > inR) return null;
+
+    int rootVal = preorder[preL]; // 找到根节点值
+    TreeNode root = new TreeNode (rootVal); //创建
+    // 找到前序遍历的root节点 在中序遍历中的位置 通过dic获取 
+    int pIdx = inorderdic[rootVal];
+    //然后构建 模糊的话更上面的图来结合其看
+    root.left = RecBuildTree (preorder, preL + 1, pIdx - inL + preL, inorderdic, inL, pIdx - 1);
+
+    root.right = RecBuildTree (preorder, pIdx - inL + preL + 1, preR, inorderdic, pIdx + 1, inR);
+
+    return root;
+}
+```
+
