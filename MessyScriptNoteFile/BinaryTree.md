@@ -78,6 +78,13 @@ public void InorderRecursive (TreeNode root) {
 + 总的来说就是用一个栈来模拟，创建一个cur指针，一直往左边的节点迭代下去，每次迭代都入栈，当走到最后一个（也就是最左边那个节点）就停止（整个迭代在while里面进行），然后操作栈顶的元素（第一次的话就是最左下节点），取出来看它还有没右子节点，有的话cur指过去，然后while的时候又入栈 也就是说在子while中每都次以cur为路线找左节点 如此循环，再利用了栈的特性 直到右节点为空并且栈也为空时撒过
 
 ### 二叉树构建
+#### 构建方式
+[×] 只有前序 5种状态
+[×] 前后序 2种状态
+[√] 前中序
+[√] 中后序
+
+
 #### 通过前序中序构建
 
 前序遍历在数组中的第一位就是根节点root 但是无法确定左右子树
@@ -165,4 +172,34 @@ private TreeNode RecBuildTree (int[] preorder, int preL, int preR, Dictionary<in
     return root;
 }
 ```
+
+#### 精选代码
+```Csharp
+public TreeNode BuildTree (int[] preorder, int[] inorder) {
+    return helper (0, 0, inorder.Length - 1, preorder, inorder);
+}
+
+private TreeNode helper (int preStart, int inStart, int inEnd, int[] preorder, int[] inorder) {
+    // 递归终止条件 
+    if (preStart > preorder.Length - 1 || inStart > inEnd) return null;
+
+    // 构建root
+    TreeNode root = new TreeNode (preorder[preStart]);
+
+    // Index of current root in inorder
+    int inIdex = 0;
+    // 在 inorder 里面找 root 
+    for (int i = inStart; i <= inEnd; ++i)
+        if (inorder[i] == root.val)
+            inIdex = i;
+    // 递归构建 rec
+    root.left = helper (preStart + 1, inStart, inIdex - 1, preorder, inorder);
+
+    root.right = helper (preStart + inIdex - inStart + 1, inIdex + 1, inEnd, preorder, inorder);
+
+    return root;
+}
+```
+
+<++>
 
