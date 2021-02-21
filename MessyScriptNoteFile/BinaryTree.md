@@ -124,8 +124,10 @@ public void InorderRecursive (TreeNode root) {
 
 ![Rehma-BuildTree-7.jpg](../pic/Rehma-BuildTree-7.jpg) 
 
-+ `preL + 1` 就是在前序遍历中的 <font color=#ffbc32>left左子树</font> __起点__
-+ `pIdx - inL + preL` 就是在前序遍历中的 <font color=#ffbc32>left左子树</font> __终点__ 
++ `preL + 1` 就是在前序遍历中的 <font color=#ffbc32>left左子树</font> __左边界__
++ `pIdx - inL + preL` 就是在前序遍历中的 <font color=#ffbc32>left左子树</font> __右边界__
+    + 咋个理解? `pIdx - inL + preL` 其实就是<font color=#ffbc32>left黄色</font> 块块的宽度，是通过inorder 算的。
+    + 然后实际上 [<font color=#ffbc32>left</font> 的 __右边界__ : `pIdx - 1 - inL`] + [<font color=#ffbc32>left</font>的 __左边界__ : `preL + 1`] = `pIdx - inL + preL`
 + `pIdx` 就是中序遍历中<font color=#0aa858>root</font> 的下标
 + 其他位置如图同理计算
 
@@ -201,5 +203,52 @@ private TreeNode helper (int preStart, int inStart, int inEnd, int[] preorder, i
 }
 ```
 
-<++>
+#### 通过中序后序构建
+
+原理和前中一样 只不过 <font color=#0aa858>root</font> 的确定不一样 __前序__ 是以 __第一个__ 为准, 而 __后序__ 是以 __最后一个__ 为准 然后都是通过 __中序__ 确定<font color=#ffbc32>左</font><font color=#4285f4>右</font>子树位置
+
+![Rehma-BuildTree-8.jpg](../pic/Rehma-BuildTree-8.jpg) 
+
+### 位置边界的计算
+
+![Rehma-BuildTree-9.jpg](../pic/Rehma-BuildTree-9.jpg) 
+
++ `poL + pIdx - inL - 1` 是 <font color=#ffbc32>left左子树</font> 的 __右边界__
+    + 咋个理解？`pIdx - inL - 1` 就是 <font color=#ffbc32>left黄色</font> 块块的宽度因为在inorder中 <font color=#ffbc32>left</font> 的 __右边界__ 正好在 `pIdx` 的左边 所以就是 `[pIdx - 1] - [inL]` 最后加上`poL` 
++ 其他同理理解
+
+源代码
+```Csharp
+Dictionary<int, int> postDic = new Dictionary<int, int> (); // 做缓存
+int[] post;
+public TreeNode BuildTree1 (int[] inorder, int[] postorder) {
+    if (inorder.Length != postorder.Length) return new TreeNode (); // 特判
+    int len = inorder.Length;
+    for (int i = 0; i < len; ++i)
+        postDic.Add (inorder[i], i); // 缓存 值和对应下标 方便递归查找
+
+    post = postorder; // 为了让递归跟清晰明了
+
+    return PostorderHelper (0, len - 1, 0, len - 1);
+}
+
+private TreeNode PostorderHelper (int poL, int poR, int inL, int inR) {
+    int rootVal = post[poR];// 后序的最后一个就是root节点的val
+    int pIdx = postDic[rootVal];// 取到root在中序中的下标位置
+    TreeNode root = new TreeNode (rootVal);
+    // 计算边界 参考图
+    root.left = PostorderHelper (poL, poL + pIdx - inL - 1, inL, pIdx - 1);
+    root.right = PostorderHelper (poL + pIdx - inL, poR - 1, pIdx + 1, inR);
+    return root;
+}
+```
+### 总结范围
+
+__在前中序里头__ 
+
+前序 left的右边界就是 `pIdx - inL + preL` 
+
+__在后中序里头__ 
+
+中序 left的右边界就是 `pIdx - inL + poL - 1`
 
