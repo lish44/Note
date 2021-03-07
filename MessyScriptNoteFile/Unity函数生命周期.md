@@ -1,4 +1,4 @@
-# Unity 函数生命周期
+[#](#) Unity 函数生命周期
 
 ### Awake
 + <font color=#4285f4>Go</font> 初始状态为 <font color=#f4433c>Flase</font> Awake不会执行

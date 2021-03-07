@@ -48,6 +48,7 @@ class selfienumerator : ienumerator {
 }
 ```
 
-<++>
+[https://www.cnblogs.com/zhaopei/p/5769782.html#autoid-1-0](https://www.cnblogs.com/zhaopei/p/5769782.html#autoid-1-0) 
 
+### 其实只要写了返回IEnumertor的方法就行
 
