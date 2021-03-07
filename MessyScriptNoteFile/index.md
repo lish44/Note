@@ -8,8 +8,6 @@
 
 [Lua语法](LuaGrammar.md) 
 
-[红黑树](RedBlackTree.md)
-
 [NET CLR via C# 笔记](NET_CLR_via_C#_Note.md)
 
 [角色工厂方法](角色工厂方法.md)
@@ -31,7 +29,6 @@
 [数据库](数据库.md)
 
 [算法模板](算法模板.md)
-
 
 [树](树.md)
 

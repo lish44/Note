@@ -1,29 +1,30 @@
-[01;34m.[00m
-├── AVLTree.md
-├── AssetBundle.md
-├── BinaryTree.md
-├── C++String.md
-├── Dictionary.md
-├── DynamicProgramming.md
-├── HashTable.md
-├── LuaGrammar.md
-├── MVC和MVP模式.md
-├── NET_CLR_via_C.md
-├── RedBlackTree.md
-├── Unity.md
-├── Unity优化问题.md
-├── Unity函数生命周期.md
-├── index.md
-├── unity面试问题总汇.md
-├── 树.md
-├── 并查集.md
-├── 数据库.md
-├── 内存方面.md
-├── 开发记录.md
-├── 算法模板.md
-├── 完全二叉树.md
-├── 微信小程序.md
-├── 角色工厂方法.md
-└── 小程序命名规范.md
+# Unity优化问题  
+--------
 
-0 directories, 26 files
+内存的开销无外乎以下三大部分：1.资源内存占用；2.引擎模块自身内存占用；3.托管堆内存占用。
+
+## 资源内存占用 
+
++ 纹理（Texture）
++ 网格（Mesh）
++ 动画片段（AnimationClip）
++ 音频片段（AudioClip）
++ 材质（Material）
++ 着色器（Shader）
++ 字体资源（Font）
++ 文本资源（Text Asset）
+
+### 纹理
+
+#### 纹理格式
+
+#### 纹理尺寸
+
+### 网格
+
+## 引擎模块自身占用
+
+## 托管堆内存占用
+
+<font color=#f4433c>Mono的堆内存一旦分配，就不会返还给系统。这意味着Mono的堆内存是只升不降的</font> 
+
