@@ -26,6 +26,7 @@
   + [时间与空间复杂度](TimeOrSpaceComlexity/index.md) 
   + [链表](Link/index.md)
   + [树](Tree/index.md) 
+  + [堆](Heap/Heap.md)
   + [优先队列](PriorityQueue/PriorityQueue.md) 
 
 ###  数据库

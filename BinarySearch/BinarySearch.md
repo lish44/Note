@@ -39,7 +39,7 @@ int search(vector<int>& nums, int target) {
 
 ![BinarySearch3.png](../pic/BinarySearch3.png) 
 
-+ `m` 位置的元素比目标值 __大__ 说明要搜的数 __一定不在__ `m` 右边→，可能在左边，所以待搜索区间可能在 __[l , h]__ 范围内
++ `m` 位置的元素比目标值 __大__ 说明要搜的数 __一定不在__ `m` 右边→，可能在左边，所以待搜索区间可能在 __[l , m]__ 范围内
 
 ![BinarySearch4.png](../pic/BinarySearch4.png) 
 

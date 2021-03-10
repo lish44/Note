@@ -77,6 +77,23 @@ public void InorderRecursive (TreeNode root) {
 
 + 总的来说就是用一个栈来模拟，创建一个cur指针，一直往左边的节点迭代下去，每次迭代都入栈，当走到最后一个（也就是最左边那个节点）就停止（整个迭代在while里面进行），然后操作栈顶的元素（第一次的话就是最左下节点），取出来看它还有没右子节点，有的话cur指过去，然后while的时候又入栈 也就是说在子while中每都次以cur为路线找左节点 如此循环，再利用了栈的特性 直到右节点为空并且栈也为空时撒过
 
+标准简化模板
+```c++
+void InorderIterator(TreeNode* root) {
+    if (!root) return NULL;
+    stack<TreeNode*> s;
+    while (root || !s.empty()) {
+        while (root) { // 一直往左走
+            s.push(root);
+            root = root->left;
+        }
+        root = s.top(); s.pop();// 走到底就弹出来
+        // root就是操作空间
+        root = root->right;// 看弹出来的node右边还有没有，没有的话root就是NULL，子while也不会继续走 
+    }
+}
+```
+
 ### 二叉树构建
 #### 构建方式
 [×] 只有前序 5种状态
