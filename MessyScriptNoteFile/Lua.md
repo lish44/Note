@@ -57,5 +57,33 @@ __ipairs__ : 遇到不连续的key会断开
 
 __pairs__ : 不会
 
+#### json和table的关系
+```json
+{
+    "scripName": "脚本测试",
+    "breathTime": 1000,
+    "initScreen": 0,
+    "main": [
+        {
+            "type": "DEBUG",
+            "title": "debug 测试1"
+        }
+    ]
+}
+```
+
+```lua
+resJson = {
+    main = {{
+        ["type"] = "DEBUG"
+    }}
+}
+```
+
+__调用__ : `resJson.main[1].type` resJson在lua里面就是个table，在json里面就是最外的括号
+
+
+
+
 
 
