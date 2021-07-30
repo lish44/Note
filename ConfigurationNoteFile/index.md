@@ -13,3 +13,5 @@
 [Win的疑难杂症](Win的疑难杂症.md)
 
 [nvim的自定义代码段](nvim的自定义代码段.md)
+
+[appium](appium.md)
