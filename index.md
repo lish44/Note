@@ -1,4 +1,4 @@
-# 一些笔记 📖
+### 一些笔记 📖
 
 [MesstScriptNote](MessyScriptNoteFile/index.md) 📘 - - 一些凌乱的编程笔记
 
@@ -7,7 +7,7 @@
 [!@)&*#$🍭*?](InsaneNoteFile/index.md) 📙 - - 一些王德发笔记
 
 
-##### 语言语法
+### 语言语法
 
   + [C++](CPP/index.md)
   + [C#](Csharp/index.md)
