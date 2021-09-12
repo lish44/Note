@@ -1,5 +1,7 @@
 ### Directory 📋
 
+[学习记录](学习记录.md)
+
 [Unity](Unity.md)
 
 [动态规划](DynamicProgramming.md) 
@@ -37,6 +39,4 @@
 [Fw](Fw.md)
 
 [Company](Company.md)
-
-[ip地址](ip地址.md)
 
