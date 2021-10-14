@@ -9,3 +9,6 @@
 步骤五：点击确认后重启win10系统使设置生效；
 
 extensions 谷歌浏览器插件管理
+
+环境变量位置
+[link](https://blog.csdn.net/jigetage/article/details/81070114) 
