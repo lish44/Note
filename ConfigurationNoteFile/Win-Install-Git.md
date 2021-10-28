@@ -52,4 +52,15 @@ $ ssh -T git@github.com
 
 参考链接：[https://www.jianshu.com/p/26cda3d42943](https://www.jianshu.com/p/26cda3d42943) 
 
+### 本地已有项目同步到git
++ 在github上新建一个和本地文件夹相同的名字的仓库
++ 然后不要勾readme
++ 看第二个
+```
+git remote add origin git@github.com:lish44/ce.git
+git branch -M main
+git push -u origin main
+```
 
++ 然后先在本地的文件夹init 初始化一下
++ 然后终端执行上面的命令就搞定
