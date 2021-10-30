@@ -8,8 +8,6 @@
 
 [c++字符串](C++String.md) 
 
-[Lua语法](LuaGrammar.md) 
-
 [NET CLR via C# 笔记](NET_CLR_via_C#_Note.md)
 
 [角色工厂方法](角色工厂方法.md)
