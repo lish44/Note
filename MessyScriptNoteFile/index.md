@@ -34,8 +34,6 @@
 
 [并查集](并查集.md)
 
-[Lua](Lua.md)
-
 [Fw](Fw.md)
 
 [Company](Company.md)

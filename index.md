@@ -14,6 +14,7 @@
   + [C++](CPP/index.md)
   + [C#](Csharp/index.md)
   + [JavaScript](js/index.md)
+  + [Lua](Lua/Lua.md)
 
 ### 算法
 
