@@ -9,3 +9,5 @@
 + [工厂模式 -- 简单工厂](Factory1.md) 
 
 + [工厂模式 -- 工厂方法](Factory2.md) 
+
++ [命令模式](Command.md)

@@ -1,5 +1,17 @@
 # Erlang
 --------
+### 配置
+#### mac
+##### vscode 
++ 先安装 `brew install erlang`，位置在`/usr/local/Cellar/erlang/24.1.3` 
++ 然后配置环境变量
+```bash
+export PATH="/usr/local/Cellar/erlang/24.1.3/bin:$PATH"
+export PATH="/usr/local/Cellar/erlang/24.1.3/lib/erlang/bin:$PATH"
+export MANPATH="/usr/local/opt/erlang/lib/erlang/man:$MANPATH"
+```
++ 去[这个](https://erlang-ls.github.io/configuration/) 页面copy配置文件，文件放在`> filename:basedir(user_config, "erlang_ls").` 输出的目录下。配置文件的第一行opt_path 要填`/usr/local/Cellar/erlang/24.1.3/lib/erlang`  
++ 下载erlang_ls拓展就没问题了
 
 ### 基本
 
@@ -77,6 +89,5 @@ QWE1 = [{qaz,3},{wsx,4} | QWE].
 ```
 + Opt3 就是表头 {qaz, 3}
 + Opt4 就是表尾 [{wsx,4},{qwe,1},{asd,2}]
-
 
 

@@ -76,8 +76,9 @@ item 可以是 1，2，3等数值类型 这就是数组
 也可是 1 = '小明', 2 = '小红'等 k v 结构 
 可以是 'jack' = 10, 'hhh' = 'apple' 等键值对
 ```
++ 调用的话直接用 . -- 想象成 tb.k 得到 v（有可能是值或者方法或者一个表达式，但无所谓，最终用表.k就能拿到k对应的v）
 
-如果是数组 用 ipairs 如果是键值对 用pairs
++ 如果是数组 用 ipairs 如果是键值对 用pairs
 #### 一维数组
 ```lua
 tb = {1, 2, nil, 3,"huahua"} -- 类似List<object>
@@ -490,7 +491,6 @@ rehma = Persion:New("rehma", 10, "man")
 cat:DebugLogName()
 rehma:DebugLog()
 ```
-
 
 
 
