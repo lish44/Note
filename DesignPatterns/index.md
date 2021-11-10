@@ -11,3 +11,5 @@
 + [工厂模式 -- 工厂方法](Factory2.md) 
 
 + [命令模式](Command.md)
+
++ [状态模式](StatePattern.md)
