@@ -1,6 +1,6 @@
 ### mysql数据库
 
-+ [安装](Install.md)  
++ [基本结构](基本结构.md)
 
 + [基本操作](BaseOperation.md) 
 
