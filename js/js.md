@@ -1,6 +1,5 @@
 # JavaScript基础 
 
-
 ### 特殊
 
 + 数组可以对象赋值
@@ -128,3 +127,125 @@ javascript
 
 + undefined
     + 声明没有**赋值** 
+
+### 数组
+
+__用var的话 出了 if for 外部还能调用__
+
+
+__数组原生支持 栈和队列__
+
+栈
++ push pop
+
+队列
++ shift 出队从【0】开始
++ unshift 入队从【0】开始
+
+__切片__
+
+arr.slice
+
+__map数组__ 
+操作数组后会返回一个新的数组
+```javascript
+let arr = [1, 2, 3]
+let res = arr.map(e => {e * 2})
+//arr -> 1，2，3
+//res -> 2，4，6 值拷贝
+
+```
+
+__数组筛选 filter__
+```js
+let arr = new Array();
+for (let i = 0; i < 10; i++) {
+  arr[i] = i;
+}
+var a = arr.filter(e => e > 7 && e < 9)
+console.log(a) // [8]
+```
+
+__数组测试 every__ 
+> 遍历数组 如果有一个不满足就是返回false
+```js
+//arr同上
+let res = arr.every (e => e >7)
+console.log(res)// false 因为0就不大于7所有失败
+let res2 = arr.every (e => e > -1)
+console.log(res2)// true
+```
+
+__destructuring解构操作符__ 
+> 类似就是erlang的 匹配提取值 
+```js
+let [, a, , b] = arr;// 占位就不写
+console.log(a + "_" + b)// 1_3 
+```
+
+__rest操作符__ 
+> 就是解构想要的元素后 想把剩下的一起返回出来 ！用 `...【resname】` 表示 resname是名字随便取 且 必须在最后一位  
+```js
+let [, a, , b, ...res] = arr;
+//res -> [4, 5, 6, 7, 8, 9] 
+```
+
+### 对象
+> 用{} 花括号 表示，类似lua的表 键值对表示 k可以是名字 或者 字符串（一般用名字） v 可以是 值 或者表达式 或函数 或另外一个对象，和lua 的表差不多，访问用`.` 或者obj【”name“】形式
+
+__创建__
+```js
+let obj = new Object();
+obj.name = 'huahua';
+obj.age = 22;
+
+//等价创建
+obj = {
+  name: 'huahua',
+  fun() {// 省略key
+    this.name = 'nima'
+    console.log(123)
+  }
+}
+console.log(obj.name)//huahua
+obj.fun()
+console.log(obj.name)//nima
+```
+
+
+__遍历__ 
+```js
+console.log(Object.keys(obj))// ["huahua", 22]
+for (const key in obj) {
+  if (Object.hasOwnProperty.call(obj, key)) {
+    const e = obj[key];
+    console.log(e)// e就是v huahua和22
+  }
+}
+```
+
+__删除__ 
+`delete obj.name` 
+
+__this的指向__ 
+
+如果在对象内部 就是指向对象
+
+如果用普通方法定义对象的属性的时候 this指向的是对象本身
+```js
+obj.fun = function(){this.name = 'nima'}// this指向自己的name
+```
+如果用匿名方法的话 this指向的this指向的就是全局Window
+```js
+obj.fun = () => {this.name = 'nima'}// this指全局Window的name
+```
+
+__对象实例__ 
+> js里面对象的实例是直接可以用方法来new的
+```js
+```
+这个newObj 就是定义的 obj
+
+__原型__
+> 其实就是在定义方法的时候的模板  
+
