@@ -19,3 +19,6 @@
 [vscode输入法切换](vscode输入法切换.md)
 
 [nvim](nvim.md)
+
+[服务器配置](服务器配置.md)
+
