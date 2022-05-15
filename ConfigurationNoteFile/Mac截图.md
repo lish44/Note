@@ -33,4 +33,9 @@ defaults write com.apple.dock expose-animation-duration -int 0; killall Dock
 defaults delete com.apple.dock expose-animation-duration; killall Dock
 ```
 
+### 长按禁用字符
+```
+defaults write com.sublimetext.2 ApplePressAndHoldEnabled -bool false
+```
+
 [return](./index.md)
