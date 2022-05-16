@@ -17,5 +17,5 @@
 #### 表现逻辑
 + model中的数据变更后，需要通知view显示，这个叫<font color=#f4433c>表现逻辑</font>
 + model -> view
-![xx](https://gitee.com/rehma/pic/raw/master/res/20210629235559.png)
+![pic](https://raw.githubusercontent.com/lish44/pic/main/img/202205162220576.png)
 
