@@ -21,7 +21,7 @@
 
 `cfdisk` 命令进行分区
 + `cfdisk /dev/sda` 
-![分区窗口](https://gitee.com/rehma/pic/raw/master/res/20210731000747.png)
+![分区窗口](https://raw.githubusercontent.com/lish44/pic/main/res/202205162323916.png)
 
 + 首先分800M的EFI分区
 + 30G的根目录分区
@@ -37,7 +37,7 @@
 `mkfs.vfat /dev/sda1` 
 
 ### 挂载
-![挂载](https://gitee.com/rehma/pic/raw/master/res/20210731001925.png)
+![挂载](https://raw.githubusercontent.com/lish44/pic/main/res/202205162324405.png)
 
 ### 设置时区
 + `In -fs /usr/share//zoneinfo/Asia/Shanghai /etc/localtime` 

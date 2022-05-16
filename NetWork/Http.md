@@ -6,7 +6,7 @@
 + object就是要操作的对象，其实就是URL指定的那个文件
 
 发送请求就是用http自带的方法，比如Get。然后携带URL参数，发送给服务器。然后服务器根据发过来的请求，返回 __响应消息__ 其实就是一些数据并且附带状态码。比如404就是没找到资源，500表示服务器错误，403表示不能浏览目录访问失败。
-![pic](https://gitee.com/rehma/pic/raw/master/res/20210904162708.png)
+![pic](https://raw.githubusercontent.com/lish44/pic/main/res/202205162329001.png)
 
 如果是纯字就访问结束。如果有图片
 + 浏览器会在显示文字的时候搜索这些标签
@@ -15,20 +15,20 @@
 + 然后返回并显示到预留的空间中
 
 书上的例子
-![pic](https://gitee.com/rehma/pic/raw/master/res/20210904173323.png)
-![pic](https://gitee.com/rehma/pic/raw/master/res/20210904173404.png)
-![pic](https://gitee.com/rehma/pic/raw/master/res/20210904173421.png)
+![pic](https://raw.githubusercontent.com/lish44/pic/main/res/202205162330859.png)
+![pic](https://raw.githubusercontent.com/lish44/pic/main/res/202205162331802.png)
+![pic](https://raw.githubusercontent.com/lish44/pic/main/res/202205162331412.png)
 
 <font color=#f4433c>1 条请求消息中只能写 1 个 URI。如果需要获取多个文件，必须 对每个文件单独发送 1 条请求。</font> 
 
 
 ### 格式
-![pic](https://gitee.com/rehma/pic/raw/master/res/20210904170756.png)
+![pic](https://raw.githubusercontent.com/lish44/pic/main/res/202205162330604.png)
 [消息头和消息体](https://blog.csdn.net/destiny1507/article/details/81701106) 
 
 
 ### Http主要方法
-![主要方法png](https://gitee.com/rehma/pic/raw/master/res/20210904160441.png)
+![主要方法](https://raw.githubusercontent.com/lish44/pic/main/res/202205162328807.png)
 
 ### CGI程序
 对 Web 服务器程序调用其他程序的规则所做的定义就是 CGI，

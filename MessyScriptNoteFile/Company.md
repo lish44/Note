@@ -105,7 +105,8 @@ m_img.LoadImage(path, "0", null, matPath);
     + 进去只保留 .tps 文件其他删了
     + 把图片拷贝进 ..Sprites
     + 开始打
-    ![图集](https://gitee.com/rehma/pic/raw/master/res/20210803114154.png)
+	
+	![图集](https://raw.githubusercontent.com/lish44/pic/main/res/202205162325946.png)
 4. 再unity中右键创建图集
     + ![截图](https://gitee.com/rehma/pic/raw/master/res/20210803115138.png)
 5. 创建prefab设置 预制体一般以army 开头

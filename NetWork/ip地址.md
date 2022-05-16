@@ -56,7 +56,7 @@ C类子网掩码借2位，本来是 255.255.255.0 => 11111111.11111111.11111111.
 
 ### 交换机
 > 可以理解为充当网线的作用，连接多个网卡。工作在二层 数据链路层
-![交换机连接示意图](https://gitee.com/rehma/pic/raw/master/res/20210808174201.png)
+![交换机连接示意图](https://raw.githubusercontent.com/lish44/pic/main/res/202205162327160.png)
 
 交换机维护了一张 MAC 地址表，把交换机的端口和机器的mac地址进行了映射和维护，需要发数据包的时候直接查就找到了
 ![交换机发送示意图](https://gitee.com/rehma/pic/raw/master/res/20210808174557.png)

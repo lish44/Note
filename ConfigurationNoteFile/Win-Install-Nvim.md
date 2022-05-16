@@ -15,11 +15,11 @@
 
 cmd 输入 sysdm.cpl 打开环境变量 高级->环境变量
 
-![pic](https://gitee.com/rehma/pic/raw/master/res/20210912161149.png)
+![pic](https://raw.githubusercontent.com/lish44/pic/main/res/202205162332516.png)
 
-![pic](https://gitee.com/rehma/pic/raw/master/res/20210912161207.png)
+![pic](https://raw.githubusercontent.com/lish44/pic/main/res/202205162332877.png)
 
-![pic](https://gitee.com/rehma/pic/raw/master/res/20210912161220.png)
+![pic](https://raw.githubusercontent.com/lish44/pic/main/res/202205162332723.png)
 
 
 基本安装完成

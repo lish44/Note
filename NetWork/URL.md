@@ -13,5 +13,5 @@
 + com后面不写默认用80端口
 + /dir 的 __/__ 就是根目录，可以不写，不写默认就是 __/index.html__
     - 如果像这样 `www.xx.com/qwe` 那么qwe如果是文件就是文件，如果是文件夹就是文件目录
-![pic](https://gitee.com/rehma/pic/raw/master/res/20210904155231.png)
+![url结构](https://raw.githubusercontent.com/lish44/pic/main/res/202205162327107.png)
 
