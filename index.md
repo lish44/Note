@@ -15,6 +15,7 @@
   + [C#](Csharp/index.md)
   + [JavaScript](js/index.md)
   + [Lua](Lua/Lua.md)
+  + [Golang](Go/Golang.md)
 
 ### 算法
 
