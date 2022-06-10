@@ -12,7 +12,80 @@ uint32
 
 uint64
 
-#### channel
+### 包 位置 环境变量
+
+#### 位置
+
+`go env` 可查看go的环境所有变量
+
+`GOROOT` 就是安装位置一般就在`/usr/local/go`路径下 
+
+`GOPATH` 就是Go项目代码存放的位置 这个是我们自己定义的目录 就好比是其他IDE的Workspace
+
+`go get` 和 `go install` 命令会下载go代码到GOPATH
+
+#### 环境变量
+
+shell 中主要配这
+```zsh
+export GO111MODULE=on
+export GOPATH="$HOME/WorkSpace/go"
+export GOPROXY="https://goproxy.cn"
+```
+
+[详情](https://blog.csdn.net/qq_38151401/article/details/105729884) 
+
+一个文件夹下面只有一个mod ，当前文件夹下面的所有文件共享 **全局变量** **全局函数**，只有一个文件时可和包名相同，其他随意
+
+
+#### 引入包问题
+
+`go mod tidy` 会自动下载import里的包到GOPATH下
+
+**三方包**
+
+GO111MODULE 开启后会使用mod模式 ，即 install 或 get 下载的包会下到 GOPATH/pkg/mod/ 下
+
+**本地包**
+
+1.18之前用replace
+
+引入最重要的是配置 go.mod 文件 需要用replace来特殊指定当前包(module)的位置
+
+![结构](https://raw.githubusercontent.com/lish44/pic/main/res/202206110137300.png)
+
+```tree
+XX
+├── afile
+│   ├── afile.go
+│   ├── cao2.go
+│   └── go.mod
+├── go.mod
+├── go.sum
+└── main.go
+```
+
+- 当前实验目录是在GOPATH/XX 文件夹内进行
+- `./` 当前文件当做根位置 `../` 当前文件上级目录位置，mod 配置时必须加 `./` 类似路径
+- foo 名字随意但必须要加，一般是公司名字 ex: `company.com/module_name`
+- afile 下所有文件的全局函数或变量公用<font color=#bf616a>（需首字母大写）</font>
+- 引入并用别名
+
+	```go
+	import (
+		af "foo/afile"
+	)
+	```
+
+
+~~import 时会先从`GOROOT/src`下找，然后再去 `GOPATH/src` 找，如果还没找到 就报错找不到package~~ 
+
+~~ex: import "huahua/models" 实际上找的就是 GOROOT/src/huahua/models 这个包，没找到就遵从上面规则~~
+
+
+
+
+### channel
 
 > 在go中 goroutine 的交流途径用 **channel** 来实现
 
@@ -151,4 +224,17 @@ func huahua(n int, str string) {
 - `wg.Add()` 添加计数个数
 - `wg.Wait()` 程序阻塞 等待计数器为0 恢复执行 , wg 要确保goroutine 执行完成不然会出现 **deadlock**
 - `wg.Done()` 计数-1
+
+### 删除go
+
+root 权限 
+
+`rm -rf /usr/local/go` 
+
+
+`rm -rf /etc/paths.d/go` 
+
+删除有关go的环境变量配置
+
+`vim ~/.bash_profile` || `vim ~/.zshrc` 
 
