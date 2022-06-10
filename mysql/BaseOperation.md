@@ -38,6 +38,9 @@
 
 ### 约束 
 主键
+
+> 其实就是一个唯一ID，（可GUID，可自增）
+
 > 确定一条记录不重复且唯一性 一般id字段来表示[详细介绍传送门](https://www.liaoxuefeng.com/wiki/1177760294764384/1218728391867808)
 
     给已有的字段添加主键：alter table xx add primary key(k);
@@ -47,7 +50,11 @@
     删除主键约束：alter table xx drop primary key;
     
     带AUTO_INCREMENT 先去掉再删：alter table xx modify k t; - - k 字段 t 类型
+	
 联合主键
+
+> 其实就是因为主键不能相同，有时候需要多对多且关系唯一，比如多个老师对多个班级
+
 > 两个或更多的字段都设置为主键
 
     create table xx (id int, name varchar(10), primary key(id,name));
