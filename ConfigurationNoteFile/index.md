@@ -29,3 +29,5 @@
 [代理](代理.md)
 
 [tmux](tmux.md)
+
+[zsh](zsh.md)
