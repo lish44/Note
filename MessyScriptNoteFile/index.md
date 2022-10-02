@@ -34,8 +34,6 @@
 
 [Fw](Fw.md)
 
-[Company](Company.md)
-
 [Erlang](Erlang.md)
 
 [python](python)
