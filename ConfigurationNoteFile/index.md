@@ -32,6 +32,4 @@
 
 [zsh](zsh.md)
 
-[docker](docker.md)
-
 [ffmpeg_livego](ffmpeg_livego.md)
