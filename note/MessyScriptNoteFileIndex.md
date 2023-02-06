@@ -6,17 +6,11 @@
 
 [动态规划](DynamicProgramming.md) 
 
-[c++字符串](C++String.md) 
-
 [NET CLR via C# 笔记](NET_CLR_via_C#_Note.md)
 
 [角色工厂方法](角色工厂方法.md)
 
 [HashTable](HashTable.md)
-
-[Dictionary](Dictionary.md)
-
-[开发记录](开发记录.md)
 
 [微信小程序](微信小程序.md)
 
@@ -35,9 +29,5 @@
 [Fw](Fw.md)
 
 [Erlang](Erlang.md)
-
-[python](python)
-
-[less](less.md)
 
 [git](git.md)

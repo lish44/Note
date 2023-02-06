@@ -32,12 +32,12 @@ int fib (int n) {
 ```
 展开树（递归树）
 
-![RecursionTree](../pic/RecursionTree.png) 
+![pic](https://raw.githubusercontent.com/lish44/pic/main/res/RecursionTree.png)
 
 ### 主定理
 解决所有递归函数的时间复杂度问题
 
-![RecursionTree2](../pic/RecursionTree2.png) 
+![pic](https://raw.githubusercontent.com/lish44/pic/main/res/RecursionTree2.png)
 
 基本二叉树的遍历 前 中 后 时间复杂度是 O(n): 因为可以看成每个节点都要访问一次所以是O(n)
 
