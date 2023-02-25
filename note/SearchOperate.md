@@ -45,6 +45,20 @@
 
 默认升序 降序加desc：`select * from student order by score desc;`
 
+--------
+new ↓
+
+`<>` 不等于
+```sql
+select t.name, i.identity_num
+from student t
+join identity i
+on t.id = i.id
+where t.city <> '杭州';
+```
+
+
+
 
 
 
