@@ -8,5 +8,7 @@
 
 + [搜索](SearchOperate.md) 
 
++ [gorm](gorm.md)
+
 [learn-y-minutes-to-x](https://learnxinyminutes.com/docs/zh-cn/sql/) 
 

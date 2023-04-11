@@ -6,6 +6,8 @@
 
 [Other](InsaneNoteFileIndex.md) 📙 - - 其他笔记
 
+[AI](AI.md)
+
 ### 操作系统
 
   + [操作系统](操作系统.md)

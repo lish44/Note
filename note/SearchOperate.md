@@ -57,6 +57,92 @@ on t.id = i.id
 where t.city <> '杭州';
 ```
 
+### 操作封成api (CREATE PROCEDURE)
+
+> 创建存储过程。存储过程是一种封装了一系列SQL语句和控制语句的程序，可以被多次调用，提高了SQL语句的复用性和可维护性。
+
+```sql
+CREATE PROCEDURE calc(IN a INT, IN b INT, OUT c INT)
+BEGIN
+   SET c = a + b;
+END
+```
+- IN 就是输入
+- OUT 就是输出
+
+```sql
+SET @a = 1;
+SET @b = 2;
+CALL calc(@a, @b, @c);
+SELECT @c;
+```
+
+列2：
+```sql
+CREATE PROCEDURE get_user_by_id (IN user_id INT)
+BEGIN
+  SELECT * FROM users WHERE id = user_id;
+END
+```
+- 可以通过调用 CALL get_user_by_id(1) 来查询 id 为 1 的用户信息。
+
+### 联表查询
+
+#### 外连接 outer join
+
+**left join** 
+
+数据库在通过连接两张或多张表来返回记录时，都会生成一张中间的临时表，然后再将这张临时表返回给用户。 在使用left jion时，on和where条件的区别如下：
+
+1. on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。
+
+2. where条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有left join的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。
+
+**right join** 
+
+原理同上，只不过左右顺序反了
+
+
+
+#### 内连接 inner join
+
+--------
+
+### 分组查询
+假设有一个学生表格 Student，其中包含了学生的 ID、姓名、性别和年龄信息：
+
+| ID | Name   | Gender | Age |
+|----|--------|--------|-----|
+| 1  | Alice  | Female | 18  |
+| 2  | Bob    | Male   | 20  |
+| 3  | Carol  | Female | 19  |
+| 4  | David  | Male   | 21  |
+| 5  | Emily  | Female | 20  |
+| 6  | Frank  | Male   | 19  |
+| 7  | Gloria | Female | 18  |
+| 8  | Henry  | Male   | 20  |
+
+
+可以使用以下 SQL 查询语句对学生按照性别进行分组，并统计每个分组中的学生数量和平均年龄：
+```sql
+SELECT Gender, COUNT(*) AS Count, AVG(Age) AS AvgAge
+
+FROM Student
+
+GROUP BY Gender;
+```
+执行这个查询语句后，将得到以下结果：
+
+| Gender | Count | AvgAge |
+|--------|-------|--------|
+| Female | 4     | 19.25  |
+| Male   | 4     | 20.25  |
+
+这个结果表示，学生表格中共有 4 个女生和 4 个男生，女生的平均年龄为 19.25 岁，男生的平均年龄为 20.25 岁。这个查询结果可以帮助我们了解不同性别学生的数量和年龄分布情况，从而为学校的招生和教学提供参考。
+
+**其实就是把每组用特定条件计算出来** 
+---
+
 
 
 
