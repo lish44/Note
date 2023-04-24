@@ -54,22 +54,24 @@ i.e. 上面指令意思就是生成时忽略CURA显卡测试 使用cpu渲染
 ### 基础
 
 
-主要有三个部分构成
-1. VAE
-2. U-NET
-3. CLIP
+文字转图参数说明
+![pic](https://raw.githubusercontent.com/lish44/pic/main/res/202304231038151.jpg)
 
 
-+ 大模型(主模型)
-	+ [VAE](VAE.md) i.e. 简单理解为滤镜,加深细节
-+ 小模型(微调模型)
-	+ [loar](loar.md)
-	+ Embedding
-	+ Hypernetwork
-	+ dreambooth
+提示词实例
+
++ Self-Portrait by Egon Schiele 席勒自画像
+
++ illustration print of horse head sculpture, super detailed, by dan mumford, by aaron horkey, high contrast, low poly style 铜马
+
++ thick coated oil painting close-up portrait of sad boy, by ben quilty, by hikari shimoda 厚涂油画
 
 
- 
++ illustration of close-up street view of gothic town, night, by peter mohrbacher, by alex andreev, by jacek yerka, large depth of field, super detailed, digital art, trending on artstation, minimalism 哥特式小镇的特写
+
++ fine silver badge, baroque pattern, relief angry cat, medieval, merchandise display, photorealistic, hyper realistic, octane render 猫
+
+
 #### 文本描述 tag用法
 
 1. `,` 分隔tag
@@ -103,11 +105,40 @@ i.e. 上面指令意思就是生成时忽略CURA显卡测试 使用cpu渲染
 
 在选主模型时查看 base model 的版本, 一般SD 1.5 或者没特殊标注的都是 512 * 512, 有特殊标注的如 SD 2.1 768, 就是 768 * 768的, 如果再生成时选择了过高的分辨率, 可能会出现几个头几个手
 
+[ControlNet](ControlNet.md) 基本介绍
 
 
-目前的认知
-1. 做图不能连续
-2. 细节不能控制
-3. 大模型个人无法训练
-4. 手脚细节很难把控
-5. 
+[UI端启动配置项目](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Command-Line-Arguments-and-Settings) 
+
+
+sd基础模型版本现在有1和2
+
++ 1 用的是OPEN AI 的CLIP,其模型本身开源,但是训练clip的数据集不开源 -> 可能会有版权问题
++ 2 用的是OPEN CLIP,是clip的开源版本,过滤了NSFW图像 -> 无版权问题
++ sd基础模型的特点就是多样性,但是具体细节风格不稳定
+
+
+一些名词概念
+ 
++ VAE 是一种编码解码模型,负责图像处理
++ U_net 是一种卷积神经网络, 用来预测噪音,工作在浅空间中,
++ clip 文字处理模型,把文字转化为u_net能理解的状态,并在解码时不停地和u_net"做插值"来影响噪音,使其达到文字生成图片效果
++ checkpoint 是一种微调模型,和sd基础模型训练后的带有独特风格的模型
++ dreambooth 是一个深度学习模型,用来微调现有的文声图模型,google在2022年研发,原理是用指定的3~8张图片进行针对性训练
++ [loar](loar.md) 是微调模型,可以用dreambooth来训练,主要是任务特征的训练,画风训练,基本原理是输入一组特定的风格的照片,从而生成一些特定的 **描述词和标签**,简单说通过特定的描述词可以影响最后出图效果,类似加滤镜
++ Embedding
++ Hypernetwork
+
+主要有三个部分构成
+1. VAE
+2. U-NET
+3. CLIP
+
+
++ 大模型(主模型)
+	+ [VAE](VAE.md) i.e. 简单理解为滤镜,加深细节
++ 小模型(微调模型)
+	+ [loar](loar.md)
+	+ Embedding
+	+ Hypernetwork
+	+ dreambooth
