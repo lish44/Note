@@ -23,6 +23,7 @@
   + [JavaScript](jsIndex.md)
   + [Lua](Lua.md)
   + [Golang](GoIndex.md)
+  + [Python](Python.md)
 
 ### 算法
 
