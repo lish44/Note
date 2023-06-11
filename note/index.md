@@ -24,6 +24,7 @@
   + [Lua](Lua.md)
   + [Golang](GoIndex.md)
   + [Python](Python.md)
+  + [Java](Java.md)
 
 ### 算法
 
