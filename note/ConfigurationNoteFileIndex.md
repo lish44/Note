@@ -36,3 +36,5 @@
 
 [vps线路](vps线路.md)
 
+[mac装环境](mac装环境.md)
+
