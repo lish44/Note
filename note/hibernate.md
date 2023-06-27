@@ -163,3 +163,38 @@ public class Main {
 
 
 ```
+
+
+### getCurrentSession()与openSession()的区别？
+
+在 SessionFactory 启动的时候，Hbernate 会根据配置创建相应的 CurrentSessionContext，在 getCurrentSession( 被调用的时候，实际被执行的方法是CurrentSessionContext.currentSession()。在 currentSession() 执行时，如果当前 Session 为空，currentSession 会调用SessionFactory的openSession。所以getCurrentSession0 对于 Java EE 来说是更好的获取 Session 的方法。
+
+用geCurentSession0创建的session会绑定到当前线程中，而采用openSession0创建的session则不会
+
+采用getCurrentSession()创建的session在commit或rollback时会自动关闭，而采用openSession()创建的session必须手动关闭
+
+使用getCurrentSession0需要在hibernate.cfg. xm/文件中加入如下配置：
+
+如果使用的是本地事务 （jdbc事务）
+
++ sproperty name='hibernate.current_session_context_class">threade/property>
+
+如果使用的是全局事务 （ita事务）
+
++ sproperty name="hibernate.current_session_context_class">jtad/property>
+
+如果使用的是session的管理机制（不太常用）
+
++ sproperty name='hibernate.currentsession_context_class">managed<property>
+
+
+### 什么是JPA?
+相同处：
+1. 都跟数据库操作有关，JPA 是JDBC 的升华，升级版。
+2. JDBC和JPA都是一组规范接口
+3. 都是由SUN官方推出的
+
+不同处：
+1. JDBC是由各个关系型数据库实现的， JPA 是由ORM框架实现
+2. JDBC 使用SQL语句和数据库通信。JPA用面向对象方式，通过ORM框架来生成SQL，进行操作。
+3. JPA在JDBC之上的，JPA也要依赖JDBC才能操作数据库。
