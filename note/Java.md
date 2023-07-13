@@ -2,6 +2,7 @@
 
 [java环境](java环境.md)
 
+
 ### 
 
 加载服务配置
@@ -185,6 +186,42 @@ public class Network : MonoBehaviour
 
 
 ```
+--------
+
+11 个并发线程 管理连接
+
+INFO  [WebSocketWorker-16] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-17] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-18] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-19] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-20] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-21] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-22] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-23] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-24] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-25] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-26] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-27] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-16] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-17] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-18] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+INFO  [WebSocketWorker-19] j.lang.Runtime - 127.0.0.1 Client Already Connections 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
+WARN  [WebSocketSelector-28] j.lang.Runtime - disconnected true from ip:127.0.0.1 
 
 
 
