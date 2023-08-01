@@ -18,3 +18,9 @@ export JAVA_HOME=$(/usr/libexec/java_home -v <version>)
 + 其中 <version> 是要切的 Java 版本号，如 1.8 或 17
 
 
+### contos8
+```bash
+
+sudo yum -y install java-17-openjdk.x86_64 java-17-openjdk-devel
+
+```
