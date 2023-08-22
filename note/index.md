@@ -19,7 +19,7 @@
 ### 语言语法
 
   + [C++](CppIndex.md)
-  + [C#](Csharp/index.md)
+  + [C#](CsharpIndex.md)
   + [JavaScript](jsIndex.md)
   + [Lua](Lua.md)
   + [Golang](GoIndex.md)
